@@ -5,7 +5,7 @@ export const authenticateToken = (req, res, next) => {
   // Extract the token from the cookies 
   const token = req.cookies.token;  // Access the token stored in the HttpOnly cookie
 
-  if (!token) {
+  if (!token) { 
     console.log('Token missing. Access denied.');
     return res.status(401).json({ message: 'Token missing. Access denied.' });
   }

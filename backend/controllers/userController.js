@@ -53,8 +53,8 @@ export const loginUser = async (req, res) => {
         // Set token in HttpOnly cookie
         res.cookie('token', token, {
             httpOnly: true,
-            sameSite: 'Strict',  // Ensures the cookie is sent with same-site requests
-            secure: process.env.NODE_ENV === 'production', // Set to true in production
+            sameSite: 'None', //change to Strict eventually // Ensures the cookie is sent with same-site requests
+            secure: true, // Set to true in production
             maxAge: 3600000,  // 1 hour in milliseconds
         });
 
@@ -71,8 +71,8 @@ export const logoutUser = (req, res) => {
     try {
         res.clearCookie('token', {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'Strict'
+            secure: true,
+            sameSite: 'None' //Change to "Strict" eventually
         });
         res.status(200).json({ message: 'Logged out successfully' });
     } catch (error) {

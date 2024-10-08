@@ -13,10 +13,11 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors({ 
-    origin: 'http://localhost:3000',  // Adjust this to your frontend's origin
-    credentials: true  // Allow credentials (cookies, authorization headers, etc.)
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://66fdccfe1c356faf4d63aed4--argv.netlify.app'],
+    credentials: true // Allow credentials (cookies, authorization headers, etc.)
 }));
+
 app.use(express.json());
 app.use(cookieParser());  // Use cookie-parser
  

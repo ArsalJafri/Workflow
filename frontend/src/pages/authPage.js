@@ -47,7 +47,7 @@ export const AuthPage = () => {
       console.log('Login Error:', error);  // Debugging line
       setMessage(error.response?.data?.message || 'An error occurred.');
     }
-  };
+  }; 
 
   return (
     <Container>
